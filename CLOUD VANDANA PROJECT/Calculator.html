@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Document</title>
+   <style>
+    body:hover{
+        background-color: darkorange;
+    }
+    #a{
+        height: 230px;
+        width: 2%;
+    }
+    #v{
+        padding: 6px;
+        padding-left: 2px;
+        padding-right: 0px;
+        background-color: black;
+        height:220px;
+        width: 100%;
+    }
+    #display:hover{
+        background-color:aqua;
+    }
+    #a:hover{
+        background-color:dimgray;
+    }
+    #b:hover{
+        background-color: yellow;
+    }
+    #c:hover{
+        background-color: yellow;
+    }
+    #d:hover{
+        background-color: yellow;
+    }
+    #e:hover{
+        background-color: yellow;
+    }
+    #f:hover{
+        background-color: lime;
+    }
+    #g:hover{
+        background-color: lime;
+    }
+    #h:hover{
+        background-color: lime;
+    }
+    #i:hover{
+        background-color: lime;
+    }
+    #j:hover{
+        background-color: blue;
+    }
+    #k:hover{
+        background-color: blue;
+    }
+    #l:hover{
+        background-color: blue;
+    }
+    #m:hover{
+        background-color: blue;
+    }
+    #n:hover{
+        background-color: red;
+    }
+    #o:hover{
+        background-color: red;
+    }
+    #p:hover{
+        background-color: red;
+    }
+    #q:hover{
+        background-color: red;
+    }
+    #r:hover{
+        background-color: hotpink;
+    }
+    #s:hover{
+        background-color: hotpink;
+    }
+    #t:hover{
+        background-color: hotpink;
+    }
+    </style>
+</head>
+<body>
+    <center>
+        <h1 style="color:black;">CALCULATOR</h1>
+        <fieldset id="a">
+        <div id="v">
+    <form id="calculator">
+        <input id="display">
+        <br>
+        <br>
+        <input type="button" value="AC" onclick="calculator.display.value=''" id="b">
+        <input type="button" value="C" onclick="calculator.display.value= calculator.display.value.substring(0, calculator.display.value.length-1)" id="c">
+        <input type="button" value="%" onclick="calculator.display.value+='%'" id="d">
+        <input type="button" value="+" onclick="calculator.display.value+='+'" id="e">
+         <br>
+         <br>
+         <input type="button" value="1" onclick="calculator.display.value+='1'" id="f">
+         <input type="button" value="2" onclick="calculator.display.value+='2'" id="g">
+         <input type="button" value="3" onclick="calculator.display.value+='3'" id="h">
+         <input type="button" value="-" onclick="calculator.display.value+='-'" id="i">
+         <br>
+         <br>
+         <input type="button" value="4" onclick="calculator.display.value+='4'" id="j">
+         <input type="button" value="5" onclick="calculator.display.value+='5'" id="k">
+         <input type="button" value="6" onclick="calculator.display.value+='6'" id="l">
+         <input type="button" value="*" onclick="calculator.display.value+='*'" id="m">
+         <br>
+         <br>
+         <input type="button" value="7" onclick="calculator.display.value+='7'" id="n">
+         <input type="button" value="8" onclick="calculator.display.value+='8'" id="o">
+         <input type="button" value="9" onclick="calculator.display.value+='9'" id="p">
+         <input type="button" value="/" onclick="calculator.display.value+='/'" id="q">
+         <br>
+         <br>
+         <input type="button" value="." onclick="calculator.display.value+='.'" id="r">
+         <input type="button" value="0" onclick="calculator.display.value+='0'" id="s">
+         <input type="button" value="=" onclick="calculator.display.value=eval(calculator.display.value)" id="t">
+        </form>
+    </div>
+    </fieldset>
+</center>
+</script>
+</body>
+</html>

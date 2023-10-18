@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Survey Form</title>
+</head>
+<body>
+    <form id="surveyForm">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" required><br>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" required><br>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" required><br>
+
+        <label for="country">Country:</label>
+        <select id="country" required>
+            <option value="USA">USA</option>
+            <option value="Canada">Canada</option>
+            <!-- Add more options as needed -->
+        </select><br>
+
+        <label>Gender:</label><br>
+        <input type="radio" id="male" name="gender" value="Male"> Male
+        <input type="radio" id="female" name="gender" value="Female"> Female<br>
+
+        <label for="profession">Profession:</label>
+        <input type="text" id="profession" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required><br>
+
+        <label for="mobile">Mobile Number:</label>
+        <input type="tel" id="mobile" required><br>
+
+        <button type="button" id="submitBtn" onclick="submitForm()">Submit</button>
+        <button type="button" id="resetBtn" onclick="resetForm()">Reset</button>
+    </form>
+
+    <div id="popup" style="display:none;">
+        <h2>Survey Data:</h2>
+        <p id="popupContent"></p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <script>
+        function submitForm() {
+            // Validation logic
+            const firstName = document.getElementById("firstName").value;
+            const lastName = document.getElementById("lastName").value;
+            const dob = document.getElementById("dob").value;
+            const country = document.getElementById("country").value;
+            const gender = [];
+            document.querySelectorAll('input[name="gender"]:checked').forEach((checkbox) => {
+                gender.push(checkbox.value);
+            });
+            const profession = document.getElementById("profession").value;
+            const email = document.getElementById("email").value;
+            const mobile = document.getElementById("mobile").value;
+
+            if (firstName && lastName && dob && country && gender.length > 0 && profession && email && mobile) {
+                // Data is valid, display in the popup
+                const popupContent = `
+                    First Name: ${firstName}<br>
+                    Last Name: ${lastName}<br>
+                    Date of Birth: ${dob}<br>
+                    Country: ${country}<br>
+                    Gender: ${gender.join(", ")}<br>
+                    Profession: ${profession}<br>
+                    Email: ${email}<br>
+                    Mobile Number: ${mobile}<br>
+                `;
+                document.getElementById("popupContent").innerHTML = popupContent;
+                document.getElementById("popup").style.display = "block";
+            }
+        }
+
+        function resetForm() {
+            document.getElementById("surveyForm").reset();
+        }
+
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+            resetForm();
+        }
+    </script>
+</body>
+</html>
